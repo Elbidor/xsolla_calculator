@@ -23,6 +23,7 @@ function calcButtonClick(newValue) {
         break;
 
         // Удалем всю строчку
+        case 'Backspace':
         case 'CE':
             expression.value = "";            
             expression.placeholder = '0'
@@ -81,7 +82,8 @@ function resolveExpression () {
 }
 
 document.addEventListener('keydown', (btn) => {
-    if (OPERATORS.includes(btn.key) || EXPRESSION_SYMBOLS.includes(btn.key) || (!Number.isNaN(parseInt(btn.key)) && btn.key.length == 1)){
+    if (OPERATORS.includes(btn.key) || EXPRESSION_SYMBOLS.includes(btn.key) 
+        || btn.key == 'Backspace' || (!Number.isNaN(parseInt(btn.key)) && btn.key.length == 1)){
         calcButtonClick(btn.key);
     }
     else {
