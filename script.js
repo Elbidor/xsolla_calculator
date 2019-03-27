@@ -1,3 +1,4 @@
+
 const OPERATORS = ['+', '-', '*', '/', '%']
 const EXPRESSION_SYMBOLS = ['.', '(' , ')']
 var wasResolved = false;
@@ -7,9 +8,9 @@ var regExp = {
 }
 
 function calcButtonClick(newValue) {
-    expression = document.querySelector('.calculator__display');
-    switch (newValue) {
+    expression = document.querySelector('.calculator__display');  
 
+    switch (newValue) {
         case '%':
             dividend = regExp.lastNumber.exec(expression.value); 
             fraction = dividend.toString().match(regExp.fraction);
@@ -69,9 +70,11 @@ function calcButtonClick(newValue) {
 function resolveExpression () {
     display = document.querySelector('.calculator__display');
     if (display.value) {
-        // Отловим ошибку, если пользователь случайно/нарочно ввел что-то неправильное вроде "(((((2)"
+        // Отловим ошибку, если пользователь случайно/нарочно ввел что-то неправильное вроде "(((((2)" или поделил на 0
         try {
-            display.value = math.eval(display.value);
+            answer = math.eval(display.value);            
+            if (answer === Infinity) throw new UserException("Ошибка в выражении");
+            else display.value = Number.parseFloat(answer.toFixed(15));
             wasResolved = true;
         }
         catch {
@@ -80,6 +83,7 @@ function resolveExpression () {
         }
     }
 }
+
 
 document.addEventListener('keydown', (btn) => {
     if (OPERATORS.includes(btn.key) || EXPRESSION_SYMBOLS.includes(btn.key) 
