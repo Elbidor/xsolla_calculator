@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.8.0/math.min.js"></script>
+    <script src="script.js"></script>
+    <title>Xsolla calculator</title>
+</head>
+<body>
+    <div class="wrapper">
+            <div class="calculator">
+                <input class="calculator__display" placeholder="0" type="text" disabled>
+                <div class="calculator__body">                
+                    <button class="calcButton calcButton--mark" onclick="calcButtonClick(this.value)" value="(">(</button>
+                    <button class="calcButton calcButton--mark" onclick="calcButtonClick(this.value)" value=")">)</button>
+                    <button class="calcButton calcButton--operator" onclick="calcButtonClick(this.value)" value="%">%</button>            
+                    <button class="calcButton calcButton--operator" onclick="calcButtonClick(this.value)" value="*">×</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="7">7</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="8">8</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="9">9</button>
+                    <button class="calcButton calcButton--operator" onclick="calcButtonClick(this.value)" value="/">÷</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="4">4</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="5">5</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="6">6</button>
+                    <button class="calcButton calcButton--operator" onclick="calcButtonClick(this.value)" value="+">+</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="1">1</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="2">2</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="3">3</button>
+                    <button class="calcButton calcButton--operator" onclick="calcButtonClick(this.value)" value="-">-</button>
+                    <button class="calcButton" onclick="calcButtonClick(this.value)" value="0">0</button>
+                    <button class="calcButton calcButton--mark" onclick="calcButtonClick(this.value)" value=".">,</button>
+                    <button class="calcButton calcButton--del" onclick="calcButtonClick(this.value)" value="CE">CE</button>
+                    <button class="calcButton calcButton--equality" onclick="resolveExpression()" value="=">=</button>
+                </div>
+            </div>
+    </div> 
+</body>
+</html>
