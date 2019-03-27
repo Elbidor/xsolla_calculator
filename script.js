@@ -74,7 +74,7 @@ function resolveExpression () {
         try {
             answer = math.eval(display.value);            
             if (answer === Infinity) throw new UserException("Ошибка в выражении");
-            else display.value = Number.parseFloat(answer.toFixed(15));
+            else display.value = Number.parseFloat(answer.toFixed(7));
             wasResolved = true;
         }
         catch {
