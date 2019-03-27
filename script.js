@@ -12,7 +12,7 @@ function calcButtonClick(newValue) {
 
     switch (newValue) {
         case "%":
-            dividend = regExp.lastNumber.exec(expression.value);
+            dividend = regExp.lastNumber.exec(expression.value) || 0;
             fraction = dividend.toString().match(regExp.fraction);
             dividend = dividend[0]/100;
             // На всякий случай форматируем число, чтобы исправить
@@ -77,7 +77,7 @@ function resolveExpression () {
         try {
             answer = math.eval(display.value);
             if (answer === Infinity) throw new UserException("Ошибка в выражении");
-            else display.value = Number.parseFloat(answer.toFixed(7));
+            else display.value = Number.parseFloat(answer.toFixed(10));
             wasResolved = true;
         }
         catch {
