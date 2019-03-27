@@ -67,3 +67,19 @@ body {
 .calculator .calculator__body .calcButton--mark, .calcButton--del {
     color: #A2CDE9
 }
+
+.links {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.links__row {
+    display: flex;
+}
+
+.links__row a img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
